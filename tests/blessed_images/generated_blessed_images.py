@@ -18,6 +18,7 @@ def main(blessed_images_dir, tests_data_dir):
     w = World.open_protobuf("%s/seed_28070.world" % tests_data_dir)
     draw_simple_elevation_on_file(w, "%s/simple_elevation_28070.png"
                                   % blessed_images_dir, w.sea_level())
+    print('simple_elevation done')
     draw_elevation_on_file(w, "%s/elevation_28070_shadow.png" % blessed_images_dir, shadow=True)
     draw_elevation_on_file(w, "%s/elevation_28070_no_shadow.png" % blessed_images_dir, shadow=False)
     draw_riversmap_on_file(w, "%s/riversmap_28070.png" % blessed_images_dir)
@@ -36,6 +37,6 @@ def main(blessed_images_dir, tests_data_dir):
     img.complete()
 
 if __name__ == '__main__':
-    blessed_images_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../worldengine-data/tests/images"))
+    blessed_images_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../worldengine/tests/images"))
     tests_data_dir = os.path.abspath(os.path.join(blessed_images_dir, '../data'))
     main(blessed_images_dir, tests_data_dir)
